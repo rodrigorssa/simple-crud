@@ -1,0 +1,65 @@
+$verde:#5cb85c;
+$vermelho:#d9534f;
+$azul:#1A6298;
+body{
+	margin:0;
+	padding: 0;
+	font-family: "Verdana","arial";
+	text-align: center;
+}
+
+form{
+height: 330px;
+	label{
+width: 100%;
+display: inline-block;
+	}
+
+	input[type="text"],input[type="password"]{
+		width: 50%;
+		padding: 5px 0;
+		margin: 5px 0;
+		font-size:20px;
+
+	}
+	input[type='submit']{
+		padding: 5px;
+		width: 30%;
+		margin: 10px 0;
+	}
+}
+
+
+#loadTable{
+	margin: 20px 0;
+}
+table{
+	min-width: 300px;
+	width: 40%;
+	margin: 0 auto;
+	
+
+	tr{
+		td{
+			padding: 5px 0;
+			border-bottom: 1px solid gray;
+		}
+	}
+}
+
+.aviso{
+	padding: 10px;
+	width: 30%;
+}
+.success{
+	background-color: $verde;
+	color:#FFF;
+}
+
+.alert{
+	background-color: $vermelho;
+	color:#fff;
+}
+.hide{
+	display: none;
+}

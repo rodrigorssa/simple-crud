@@ -4,11 +4,11 @@
 	<title>Crud simples</title>
 	<meta charset="utf-8">
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
-
 <h1>Crud simples</h1>
 <form name="insert" method='post'>
 	<div>
@@ -33,7 +33,7 @@
 	</div>
 </form>
 
-<span class="aviso"></span>
+<span class="aviso hide"></span>
 
 <h2> Lista de usuários</h2>
 <button id="refreshTable">Atualizar</button>
@@ -58,24 +58,28 @@ $('#refreshTable').click(function(){
  var nameForm= form.attr('name'),
  	action=(nameForm=='insert') ? 'php/inserirdados.php' : 'php/inserirdados.php?edit',
  	time=setTimeout(function(){
- 			$('.aviso').html(" ");
+ 			$('.aviso').hide().removeClass("success alert");
  		},5000);
 
 
  	$.post(action,form.serialize()).done(function(res){
  	time;
- 		 		$('.aviso').addClass(res.class).html(res.msg);
+ 		 		$('.aviso').addClass(res.class).html(res.msg).show();
  		form.each( function(){
  			this.reset(); 
  		});
  	}).fail(function(res){
  		time;
- 		$('.aviso').html(res.responseText);
+ 		$('.aviso').addClass('alert').html(res.responseText).show();
  	});
  });
 
 
 });
 </script>
+
+<footer>
+<p>Created by <a href="https://github.com/rodrigorssa">Me.</a></p>
+</footer>
 </body>
 </html>

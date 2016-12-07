@@ -8,7 +8,7 @@ class db{
 
     public function __construct(){
 
-        $config= require 'config.php';
+$config=require __DIR__.'/../config.php';
 
     	$this->user=$config['user'];
     	$this->pass=$config['pass'];
