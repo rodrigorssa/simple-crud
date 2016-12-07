@@ -42,41 +42,7 @@
 
 </div>
 
-<script type="text/javascript">
-
-$(document).ready(function(){
-
-
-$('#loadTable').load("table.php");
-$('#refreshTable').click(function(){
-	$('#loadTable').load("table.php");
-});
-
- $('form').submit(function(e){
- 	e.preventDefault();
- 	form=$(this);
- var nameForm= form.attr('name'),
- 	action=(nameForm=='insert') ? 'php/inserirdados.php' : 'php/inserirdados.php?edit',
- 	time=setTimeout(function(){
- 			$('.aviso').hide().removeClass("success alert");
- 		},5000);
-
-
- 	$.post(action,form.serialize()).done(function(res){
- 	time;
- 		 		$('.aviso').addClass(res.class).html(res.msg).show();
- 		form.each( function(){
- 			this.reset(); 
- 		});
- 	}).fail(function(res){
- 		time;
- 		$('.aviso').addClass('alert').html(res.responseText).show();
- 	});
- });
-
-
-});
-</script>
+<script type="text/javascript" src="js/index.js"></script>
 
 <footer>
 <p>Created by <a href="https://github.com/rodrigorssa">Me.</a></p>
